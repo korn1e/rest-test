@@ -5,8 +5,8 @@
 ### Pull and Run Docker Image
 
 ```bash
-docker pull ajigile/rest-test:1
-docker run --rm -p 8080:8080 -ti ajigile/rest-test:1
+docker pull ajigile/rest-test:2
+docker run --rm -p 8080:8080 -ti ajigile/rest-test:2
 ``` 
 **Note:** wait until the service finish starting-up.
 
@@ -41,11 +41,10 @@ docker run --rm -p 8080:8080 -ti ajigile/rest-test:1
     curl -v "http://localhost:8080/api/rest/avgLeads"
     ```
 3. An end point showing all the customers grouped by tag and vice versa
-    ```bash
+   ```bash
     curl -v "http://localhost:8080/api/rest/customerTag"
-    curl -v "http://localhost:8080/api/rest/customer"
     ```
-   
-   
-
-
+    ```bash
+    curl -v "http://localhost:8080/api/rest/customer{?page,size,sort}"
+    ```
+   **Note:** you can use parameters (size, page, sort) as point 1. above
